@@ -16,4 +16,4 @@ async list(table,{admin}={}){let rows;if(isDemo)rows=ls.get('t:'+table,defaultCo
 async submit(table,row){if(isDemo){const r=ls.get('t:'+table,defaultSubmissions[table]||[]);ls.set('t:'+table,[{...row,id:crypto.randomUUID(),status:'new',created_at:new Date().toISOString()},...r]);return}
  const c=await client();const{error}=await c.from(table).insert(row);if(error)throw error},
 resetDemo(){Object.keys(localStorage).filter(k=>k.startsWith('hw:')).forEach(k=>localStorage.removeItem(k))}};
-export async function loadSite(){const[content,services,stats,tools]=await Promise.all([api.getContent(),...['services','stats','tools'].map(t=>api.list(t))]);return{content,col:{services,stats,tools}}}
+export async function loadSite(){const[content,services,stats,tools,projects,journey]=await Promise.all([api.getContent(),...['services','stats','tools','projects','journey'].map(t=>api.list(t))]);return{content,col:{services,stats,tools,projects,journey}}}
