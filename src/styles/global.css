@@ -39,3 +39,5 @@ footer{padding:30px 0;text-align:center;font-size:13px;color:var(--muted)}
 .ptitle{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 6px}.ptitle h3{margin:0;font-size:16px;max-width:300px}.arrow{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--primary);color:var(--accent);flex:none}
 .jgrid{margin-top:36px}.jcol h3{margin:0 0 16px;color:var(--primary)}.jitem{background:var(--card);border-radius:14px;padding:16px 20px;margin-bottom:12px;display:grid;gap:3px}.period{color:var(--accent);font-weight:700;font-size:12px}.jitem small{color:var(--muted)}
 @media(max-width:860px){.grid2{grid-template-columns:1fr}.hire{width:66px;height:66px;right:2%}}
+.heroimg{height:480px;align-items:flex-end}.heroimg img{border-radius:0;height:92%;width:auto;max-width:none;object-fit:contain;z-index:2;filter:drop-shadow(0 10px 16px rgb(0 0 0/.08))}
+.blob{inset:12% 6% 0 8%;z-index:1}.chip,.hire,.cur{z-index:3}.chip.dark{left:2%;bottom:20px}.chip.amber{right:-2%;bottom:120px}.hire{right:2%;top:20%}.cur.c1{left:0;bottom:62px}.cur.c2{right:22%;bottom:158px}
