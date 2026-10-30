@@ -1,4 +1,3 @@
-import {Routes,Route} from 'react-router-dom';import Layout from './components/Layout';import Home from './pages/Home';import Stub from './pages/Stub';
-export default function App(){return <Routes><Route element={<Layout/>}><Route index element={<Home/>}/>
-{['services','about','projects','blog','testimonials','contact'].map(p=><Route key={p} path={p} element={<Stub title={p[0].toUpperCase()+p.slice(1)}/>}/>)}
-<Route path="*" element={<Stub title="404 — Page not found"/>}/></Route></Routes>}
+import {useEffect} from 'react';import {Routes,Route,useLocation} from 'react-router-dom';import Layout from './components/Layout';import Home from './pages/Home';import Services from './pages/Services';import About from './pages/About';import Projects from './pages/Projects';import {Blog,BlogPost} from './pages/Blog';import Testimonials from './pages/Testimonials';import Contact from './pages/Contact';import NotFound from './pages/NotFound';
+function Top(){const{pathname}=useLocation();useEffect(()=>{window.scrollTo(0,0)},[pathname]);return null}
+export default function App(){return <><Top/><Routes><Route element={<Layout/>}><Route index element={<Home/>}/><Route path="services" element={<Services/>}/><Route path="about" element={<About/>}/><Route path="projects" element={<Projects/>}/><Route path="blog" element={<Blog/>}/><Route path="blog/:slug" element={<BlogPost/>}/><Route path="testimonials" element={<Testimonials/>}/><Route path="contact" element={<Contact/>}/><Route path="*" element={<NotFound/>}/></Route></Routes></>}

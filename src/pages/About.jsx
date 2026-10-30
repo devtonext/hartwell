@@ -1,0 +1,5 @@
+import {useSite} from '../lib/site';import PageHero from '../components/PageHero';import AboutBlock from '../components/AboutBlock';
+export default function About(){const{content:c,col}=useSite(),j=c.journey_intro,t=c.tools_intro;
+return <><PageHero k="about"/><AboutBlock/>
+<section className="wrap sec center"><small className="eyebrow">{j.eyebrow}</small><h2>{j.title} <span className="script">{j.title_accent}</span><br/>{j.title2}</h2><div className="grid2 jgrid">{['education','work'].map(k=><div key={k} className="jcol"><h3>{k==='work'?'Work Experience':'Education'}</h3>{col.journey.filter(x=>x.kind===k).map(x=><div key={x.id} className="jitem"><span className="period">{x.period}</span><b>{x.title}</b><small>{x.place}</small></div>)}</div>)}</div></section>
+<section className="grey"><div className="wrap sec center"><small className="eyebrow">{t.eyebrow}</small><h2><span className="script">{t.title_accent}</span><br/>{t.title}</h2><div className="tools">{col.tools.map(x=><div key={x.id} className="tool"><span style={{background:x.color}}>{x.abbr}</span><b>{x.percent}%</b><small>{x.name}</small></div>)}</div></div></section></>}

@@ -96,3 +96,21 @@ nav a{position:relative}nav a:after{content:'';position:absolute;left:0;right:10
 .nmsg{display:block;margin-top:8px;min-height:18px}.nmsg.done{color:var(--accent)}.nmsg.error{color:#ffb4a8}
 .fbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:22px;border-top:1px solid rgb(255 255 255/.15);font-size:12px;color:rgb(255 255 255/.65)}.legal{display:flex;gap:20px}.legal a:hover{color:var(--accent)}
 @media(max-width:980px){.fgrid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.fgrid{grid-template-columns:1fr}.fcta h2{font-size:26px}}
+/* about cutout */
+.aimg{position:relative;max-width:430px;aspect-ratio:373/345;aspect-ratio:373/345;margin:auto;width:100%}.aimg .acirc{position:absolute;left:2.7%;top:7.5%;width:85.3%;aspect-ratio:1;border-radius:50%;background:var(--accent)}.aimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:0}
+.green .pill{background:var(--accent)}.green .pill span{background:var(--primary);border:1.5px solid var(--accent);border-right:0}
+/* inner pages */
+.phero{background:var(--card);padding:60px 0 50px;text-align:center;margin-top:20px}.phero h1{font-size:44px;margin:8px 0}.crumb{font-size:13px;color:var(--muted)}.crumb a:hover{color:var(--accent)}.crumb span{color:var(--accent)}.phero .muted{max-width:520px;margin:0 auto}
+.filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:34px}.filters button,.search{font:inherit;font-size:13px;border:1px solid #ddd;background:#fff;border-radius:999px;padding:9px 20px;cursor:pointer;transition:background .25s,color .25s}.filters button:hover{border-color:var(--primary)}.filters .on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.search{display:block;width:100%;max-width:420px;margin:0 auto 34px;cursor:text;padding:12px 20px}
+.post{max-width:760px}.post img{width:100%;border-radius:var(--r);margin-bottom:24px}.post p{line-height:1.8;color:#444}
+.tcard{margin:0}.stars{color:var(--accent);letter-spacing:3px}.tcard blockquote{margin:14px 0;line-height:1.7;font-size:15px}.tcard figcaption{display:flex;align-items:center;gap:12px}.tcard img{width:48px;height:48px;border-radius:50%;object-fit:cover}.tcard figcaption span{display:grid}.tcard small{color:var(--muted)}
+.cgrid{display:grid;grid-template-columns:1fr 1.5fr;gap:34px}.cinfo ul{list-style:none;padding:0;margin:24px 0;display:grid;gap:16px}.cinfo li{display:grid;gap:2px;font-size:14px}.cinfo a:hover{color:var(--accent)}
+.cform{display:grid;gap:16px}.cform label{display:grid;gap:6px;font-size:13px;font-weight:600}.cform .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cform input,.cform textarea{font:inherit;font-size:14px;padding:12px 14px;border:1px solid #ddd;border-radius:12px;background:#fff;outline:0;transition:border-color .2s,box-shadow .2s}.cform input:focus,.cform textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 18%,transparent)}
+.cform em,.cform label em{color:#c0392b;font-size:12px;font-style:normal;font-weight:500}
+.submit{justify-self:start;border:0;background:var(--primary);color:#fff;font:inherit;font-weight:600;font-size:13px;padding:14px 30px;border-radius:999px;cursor:pointer;transition:background .25s,transform .25s}.submit:hover{background:var(--accent);color:var(--ink);transform:translateY(-2px)}.submit:disabled{opacity:.6}
+.success{text-align:center;display:grid;gap:10px;justify-items:center;align-content:center}
+.faq{max-width:780px}.acc{margin-top:30px;display:grid;gap:12px}.ai{background:var(--card);border-radius:14px;overflow:hidden}.ai button{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:0;font:inherit;font-weight:600;padding:18px 22px;cursor:pointer;text-align:left}.ai i{font-style:normal;font-size:20px;color:var(--accent);transition:transform .3s}.ai.open i{transform:rotate(45deg)}
+.ab{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}.ai.open .ab{grid-template-rows:1fr}.ab p{overflow:hidden;margin:0;padding:0 22px}.ai.open .ab p{padding-bottom:18px}
+@media(max-width:860px){.cgrid,.cform .two{grid-template-columns:1fr}.phero h1{font-size:34px}}
