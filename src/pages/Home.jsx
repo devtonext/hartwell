@@ -2,11 +2,11 @@ import {useSite} from '../lib/site';import {Lines,PillBtn,SmartLink} from '../co
 export default function Home(){const{content:c,col}=useSite(),h=c.hero,a=c.about,sv=c.services_intro,t=c.tools_intro,pj=c.projects_intro,jn=c.journey_intro;
 const mq=[...h.marquee,...h.marquee,...h.marquee];
 return <>
-<section className="wrap hero"><div><span className="badge">{h.badge}</span>
+<section className="wrap hero"><div className="herotxt"><span className="badge">{h.badge}</span>
 <h1><em>{h.title_pre}</em><span className="script">{h.name}</span><br/><Lines text={h.title}/></h1><p className="muted">{h.text}</p>
 <div className="row"><PillBtn to={h.btn1_link} icon="▶">{h.btn1}</PillBtn><SmartLink to={h.btn2_link} className="ghost">{h.btn2}</SmartLink></div></div>
 <div className="heroimg"><div className="blob"/><img src={h.image} alt={c.general.brand}/><a href={h.btn2_link} className="hire" aria-label="Hire me"><svg viewBox="0 0 100 100"><defs><path id="c" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0"/></defs><text fontSize="11" fontWeight="700" fill="#fff" letterSpacing="2"><textPath href="#c">HIRE ME • HIRE ME • HIRE ME •</textPath></text></svg><i>↗</i></a><span className="cur c1"/><span className="cur c2"/><span className="chip amber">{h.chip2}</span><span className="chip dark">{h.chip1}</span></div></section>
-<div className="marquee"><div>{mq.map((m,i)=><span key={i}>{m}<b>✳</b></span>)}</div></div>
+<div className="marquee"><div className="mqin"><div>{mq.map((m,i)=><span key={i}>{m}<b>✳</b></span>)}</div></div></div>
 <section className="wrap sec"><div className="split"><div><small className="eyebrow">{sv.eyebrow}</small><h2><span className="script">{sv.title}</span> {sv.title_accent}</h2></div><PillBtn to={sv.link}>{sv.btn}</PillBtn></div>
 <div className="grid3">{col.services.map(s=><article key={s.id} className="card"><span className="ico">{s.icon}</span><h3>{s.title}</h3><p className="muted">{s.text}</p><SmartLink to="/services">Learn more →</SmartLink></article>)}</div></section>
 <section className="green"><div className="wrap about"><div className="aimg"><div className="blob round"/><img src={a.image} alt=""/></div>
