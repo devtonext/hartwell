@@ -63,3 +63,36 @@ h1{font-size:42px;line-height:1.18}h1 .script{font-family:inherit;font-style:ita
 .mqin>div{padding:16px 0;font-size:21px}
 .sec{padding-top:90px}
 @media(max-width:860px){.hero{grid-template-columns:1fr}.herotxt{padding-bottom:20px}.heroimg{height:400px}.hire{width:66px;height:66px}h1{font-size:32px}}
+/* ---- hover system: mix of animated + plain ---- */
+/* 1 animated: pill arrow spins, label slides, lift */
+.pill{transition:transform .25s,box-shadow .25s}.pill i{transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s}.pill span{transition:padding .25s,background .25s}
+.pill:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgb(43 79 53/.25)}.pill:hover i{transform:rotate(-45deg);background:var(--accent)}.pill:hover span{padding-right:26px;background:#1f3a27}
+/* 2 animated: ghost button colour sweep from left */
+.ghost{background:linear-gradient(var(--ink),var(--ink)) no-repeat left/0 100%;transition:background-size .35s ease,color .35s}.ghost:hover{background-size:100% 100%;color:#fff}
+/* 3 plain (no animation): nav CTA swaps colour */
+.navcta{transition:none}.navcta:hover{background:var(--accent)}
+/* 4 animated underline on nav links */
+nav a{position:relative}nav a:after{content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .3s}nav a:not(.active):hover:after{right:0}nav a:hover{color:var(--accent)}nav a.active{border-bottom:0}nav a.active:after{right:0}
+/* 5 card link: arrow nudges right */
+.card a{display:inline-block;transition:transform .25s,color .25s}.card a:hover{transform:translateX(6px);color:var(--primary)}
+/* 6 round arrow: invert + scale */
+.arrow{transition:transform .25s,background .25s,color .25s}.arrow:hover{transform:scale(1.15) rotate(-45deg);background:var(--accent);color:var(--primary)}
+/* 7 plain: tags + chips colour swap */
+.tags span{transition:none}.tags span:hover{background:var(--primary);color:#fff}
+/* 8 floating chips bob on hover */
+.chip{transition:transform .3s}.chip:hover{transform:translateY(-5px)}
+.tool{transition:transform .3s,box-shadow .3s,background .3s}.tool:hover{transform:translateY(-6px);background:#fff;box-shadow:var(--shadow)}
+/* footer */
+.foot{background:var(--primary);color:#fff;margin-top:40px;padding:70px 0 24px;position:relative}
+.fcta{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:50px;border-bottom:1px solid rgb(255 255 255/.15)}
+.fcta h2{font-size:34px;line-height:1.25}.fscript{color:var(--accent);font-style:italic;font-weight:500}
+.fgrid{display:grid;grid-template-columns:1.3fr .8fr .9fr 1.2fr 1.3fr;gap:36px;padding:50px 0}
+.foot h4{margin:0 0 16px;font-size:15px;color:#fff}.foot p,.foot li,.foot small{font-size:13px;line-height:1.7;color:rgb(255 255 255/.75)}.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot li a{transition:color .2s,padding .25s}.foot li a:hover{color:var(--accent);padding-left:6px}.foot .cl a:hover{padding-left:0}
+.foot .logo{margin-bottom:14px}
+.socials{display:flex;gap:10px;margin-top:18px}.socials a{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgb(255 255 255/.3);font-size:13px;font-weight:700;transition:transform .25s,background .25s,color .25s}.socials a:hover{background:var(--accent);color:var(--primary);border-color:var(--accent);transform:translateY(-4px)}
+.news{display:flex;background:#fff;border-radius:999px;padding:4px;margin-top:12px}.news input{flex:1;min-width:0;border:0;background:none;padding:8px 14px;font:inherit;font-size:13px;outline:0;color:var(--ink)}
+.news button{border:0;background:var(--accent);color:var(--ink);font:inherit;font-size:12px;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer}.news button:hover{background:var(--primary);color:#fff}
+.nmsg{display:block;margin-top:8px;min-height:18px}.nmsg.done{color:var(--accent)}.nmsg.error{color:#ffb4a8}
+.fbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:22px;border-top:1px solid rgb(255 255 255/.15);font-size:12px;color:rgb(255 255 255/.65)}.legal{display:flex;gap:20px}.legal a:hover{color:var(--accent)}
+@media(max-width:980px){.fgrid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.fgrid{grid-template-columns:1fr}.fcta h2{font-size:26px}}
