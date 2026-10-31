@@ -1,0 +1,9 @@
+import {useEffect,useState} from 'react';import {Link} from 'react-router-dom';import {api,isDemo} from '../../lib/api';import {PAGES} from '../schema';import {Skel} from '../ui';
+export default function Overview(){const[d,setD]=useState(null);
+useEffect(()=>{Promise.all(['contact_messages','subscribers','posts'].map(t=>api.list(t,{admin:true}))).then(([m,s,p])=>setD({m,s,p}))},[]);
+return <><div className="head"><h1>Welcome back 👋</h1><p className="muted">Manage your site content, collections and incoming messages.</p></div>
+{isDemo&&<div className="banner">You’re in <b>demo mode</b>. Changes are saved in this browser only. Connect Supabase from the Setup page to go live.</div>}
+{!d?<Skel n={4}/>:<><div className="stats">{[['Pending submissions',d.m.filter(x=>x.status==='new').length,'/admin/inbox/contact_messages'],['New messages',d.m.filter(x=>x.status==='new').length,'/admin/inbox/contact_messages'],['Subscribers',d.s.length,'/admin/inbox/subscribers'],['Published posts',d.p.filter(x=>x.published).length,'/admin/c/posts']].map(([l,n,to])=><Link key={l} to={to} className="stat"><b>{n}</b><span>{l}</span></Link>)}</div>
+<div className="two"><section className="panel"><h3>Latest messages</h3>{d.m.slice(0,5).map(x=><Link key={x.id} to="/admin/inbox/contact_messages" className="row"><span><b>{x.name}</b><small>{x.subject||x.message}</small></span><em className={'st '+x.status}>{x.status}</em></Link>)}{!d.m.length&&<p className="muted">No messages yet.</p>}</section>
+<section className="panel"><h3>Latest subscribers</h3>{d.s.slice(0,5).map(x=><div key={x.id} className="row"><span><b>{x.email}</b></span><em className={'st '+x.status}>{x.status}</em></div>)}{!d.s.length&&<p className="muted">No subscribers yet.</p>}</section></div></>}
+<section className="panel"><h3>Edit a page</h3><div className="chips">{PAGES.map(p=><Link key={p.key} className="chip" to={'/admin/pages/'+p.key}>{p.label}</Link>)}</div></section></>}
